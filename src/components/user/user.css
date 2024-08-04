@@ -1,0 +1,124 @@
+.user1 {
+  position: relative;
+}
+.user2 {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  width: 20vw;
+  cursor: pointer;
+}
+.user3 {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  top: 19%;
+  left: 85%;
+  gap: 0px;
+  border-radius: 8px;
+  opacity: 0px;
+  cursor: pointer;
+}
+.user4 {
+  position: absolute;
+  width: 59px;
+  height: 66px;
+  top: 47%;
+  left: 85%;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.user4:hover{
+  transform: scale(1.05);
+}
+.user3:hover{
+  transform: scale(1.05);
+}
+.prop{
+  position: absolute;
+  margin-left: 25rem;
+  margin-top: 8rem;
+  width: 10%;
+}
+.market{
+  position: absolute;
+  margin-left: 48rem;
+  margin-top: 2rem;
+}
+.market1{
+  font-size: larger;
+  padding: 10px 15px;
+  color: #ffffff;
+  background-color: #e45122;
+  font-weight: bolder;
+}
+.market2{
+  margin-left: 13rem;
+  font-size: larger;
+  padding: 10px 15px;
+  color: #ffffff;
+  background-color: #e45122;
+  font-weight: bolder;
+}
+.username {
+  position: absolute;
+  top: 40%;
+  left: 35%;
+}
+.username h2 {
+  font-family: Roboto;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 50px;
+  text-align: left;
+  color: #ffffff;
+  left: 40%;
+}
+.wallet {
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 50px;
+  text-align: left;
+  color: #ffffff;
+}
+.amount {
+  font-family: Roboto;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 50px;
+  text-align: left;
+  color: #333333;
+  margin-left: 7px;
+}
+.userimage{
+    margin-left: 7rem;
+    margin-top: 17rem;
+    width: 30vw;
+}
+.userimage .user5{
+    padding: 1rem;
+    width: 245px;
+height: 259px;
+top: 516px;
+left: 621px;
+gap: 0px;
+opacity: 0px;
+
+}
+.userimage .user6{
+    padding: 1rem;
+    width: 245px;
+height: 259px;
+top: 516px;
+left: 621px;
+gap: 0px;
+opacity: 0px;
+
+}
+.user7{
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    width: 20vw;
+}

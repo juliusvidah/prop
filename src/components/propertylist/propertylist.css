@@ -1,0 +1,47 @@
+.property2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 2rem;
+  margin-left: 8px;
+}
+.property1 {
+  width: 98.7vw;
+  position: relative;
+}
+.detail {
+  color: white;
+  position: absolute;
+  top: 0%;
+  left: 1%;
+}
+.detail h2 {
+  font-family: Roboto;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 50px;
+  text-align: left;
+}
+.location {
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 50px;
+  text-align: left;
+}
+.see {
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 50px;
+  text-align: left;
+  color: #e45122;
+  cursor: pointer;
+}
+.price {
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 50px;
+  text-align: left;
+  margin-left: 10px;
+}

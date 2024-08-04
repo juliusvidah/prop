@@ -1,0 +1,105 @@
+/* General container for the user dashboard */
+.user-dashboard {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  .wallet-container{
+    margin-left: 30rem;
+    margin-top: -8.5rem;
+  }
+  /* Wallet balance display */
+  
+  /* Button to open the popup */
+  .manage-funds-button {
+    padding: 10px 20px;
+    background-color: #e45122;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .manage-funds-button:hover {
+    background-color: #ffffff;
+  }
+  
+  /* Styles for the overlay (background when popup is open) */
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Styles for the popup modal */
+  .popup-modal {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  .wallet-balance{
+    margin-top: 5rem;
+  }
+  
+  /* Close button (X) for the popup */
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .close-button:hover {
+    color: #000;
+  }
+  
+  /* Input field styles */
+  .popup-input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  /* Button styles inside the popup */
+  .popup-button {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .popup-button.add {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .popup-button.add:hover {
+    background-color: #218838;
+  }
+  
+  .popup-button.withdraw {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .popup-button.withdraw:hover {
+    background-color: #c82333;
+  }

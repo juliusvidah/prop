@@ -1,0 +1,47 @@
+/* src/components/Filter.css */
+.filter-container {
+    max-width: 600px;
+    padding: 20px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: o 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .filter-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .filter-container .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .filter-container .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .filter-container .form-group input,
+  .filter-container .form-group select {
+    width: 90%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .filter-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #e45122;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .filter-container button:hover {
+    background-color: #e45122;
+  }

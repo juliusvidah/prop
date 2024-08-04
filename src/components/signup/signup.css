@@ -1,0 +1,124 @@
+.logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  width: 14vw;
+}
+/* src/components/signup.scss */
+
+/* Container for the signup page */
+.signup-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: whitesmoke;
+  color: gray;
+}
+
+/* Styling for the form and image sections */
+.signup-form,
+.signup-image {
+  width: 50%;
+}
+
+/* Form styling */
+.signup-form {
+  padding: 20px;
+  max-width: 400px;
+  margin: auto; /* Center the form horizontally */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--neutral-color);
+}
+
+/* Header section of the form */
+.signup-header {
+  text-align: center;
+  color: #e45122;
+  margin-bottom: 20px;
+}
+.signup-logo {
+  width: 50px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.signup-header h1 {
+  color: #e45122;
+  margin-bottom: 5px; /* Increase bottom margin */
+}
+
+.signup-header p {
+  font-size: 16px;
+  color: black;
+}
+
+/* Form fields and layout */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-row {
+  display: flex;
+  gap: 10px; /* Space between first name and last name fields */
+}
+
+.form-field {
+  flex: 1;
+}
+
+.form-field label {
+  font-size: 14px;
+  color: #e45122;
+  margin-bottom: 5px;
+  display: block;
+}
+
+
+
+.form-field input,
+.form-field select {
+  width: 90%;
+  padding: 5px;
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.form-field input:focus,
+.form-field select:focus {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* Primary button styling */
+.btn-primary {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  background-color: var(--primary-color);
+  color: var(--neutral-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+
+/* Signup prompt styling */
+.signup-prompt {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.signup-prompt a {
+  color: #e45122;
+  text-decoration: none;
+}
+
+.signup-prompt a:hover {
+  text-decoration: underline;
+}
