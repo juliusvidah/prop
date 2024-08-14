@@ -1,0 +1,66 @@
+.create-container{
+    background-color: white;
+    padding: 2rem;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 1200px;
+}
+.create-wrapper{
+    max-width: 1000px;
+    background-color: white;
+    margin: 0px auto;
+    padding: 1rem;
+    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, .3);
+}
+.create-wrapper form .inner-cont {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+.create-wrapper form div{
+    padding: 1rem;
+}
+.create-container form div label{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: lighter;
+    margin: 10px 0px;
+}
+.create-wrapper form div input{
+    width: 100%;
+    outline: none;
+    padding: .6rem;
+    border: 1px solid gainsboro;
+    border-radius: 4px;
+}
+.create-wrapper form div textarea{
+    width: 100%;
+    padding: 1rem;
+    resize: none;
+    outline: none;
+    border: 1px solid gainsboro;
+    border-radius: 4px;
+}
+.create-container .create-wrapper form .header{
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+.create-container .create-wrapper form .header .title-container{
+    width: 70%;
+    margin-top: 1rem;
+}
+.create-container .create-wrapper form .header .title-container input {
+    border: none;
+    border-bottom: 1px solid gainsboro;
+    padding: 2rem 1rem;
+    font-size: 2rem;
+}
+.create-container .create-wrapper form .header .title-container button{
+    margin-top: 10rem;
+}

@@ -1,0 +1,81 @@
+.transactions-container{
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;
+    background-color: whitesmoke;
+    inset: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.transactions-container .side-bar{
+    background-color: #e45122;
+    padding: 10px;
+    width: 20%;
+}
+.transactions-container .user-image{
+    width: 160px;
+    height: 160px;
+    background-color: red;
+    border-radius: 100%;
+    margin: 4rem auto;
+    position: relative;
+    overflow: hidden;
+}
+.transactions-container .user-image img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.transactions-container a{
+    color: white;
+    display: block;
+    margin: 2rem auto;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.transactions-container .trans-basic-wrapper{
+    background-color: white;
+    padding: 10px;
+    width: 70%;
+
+}
+.transactions-container .trans-content{
+
+}
+.transactions-container .trans-content .trans-content-cont{
+    width: 100%;
+    min-height: 200px;
+    background-color: whitesmoke;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 10px;
+    justify-content: space-around;
+}
+.trans-content .trans-content-cont .trans-item{
+    background-color: white;
+    padding: 1rem;
+    min-height: 200px;
+    width: 100%;
+}
+.trans-content .trans-content-cont .trans-item h1{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2.5rem;
+}
+.trans-content .trans-content-cont .trans-item p{
+    text-align: left;
+    font-size: 1rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 700;
+    color: black;
+}
+.trans-content .trans-content-cont .trans-item h2{
+    text-align: left;
+    font-weight: 700;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 6em;
+    color: gainsboro;
+}

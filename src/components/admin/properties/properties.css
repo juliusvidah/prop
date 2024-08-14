@@ -1,0 +1,108 @@
+.properties-container{
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;
+    inset: 0;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+}
+.prop-listing{
+    display: flex;
+    flex-direction: column;
+}
+.prop-listing .prop-menu{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.prop-listing .prop-menu h2{
+    font-size: 3rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: lighter;
+}
+.prop-listing .prop-menu span p{
+    color: gray;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-left: 10rem;
+}
+.prop-listing .prop-menu a{
+    text-decoration: none;
+    color: #E45122;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-left: 15rem;
+    border: 1px solid #E45122;
+    padding: 1rem;
+    border-radius: 4px;
+}
+.prop-listing .prop-list{
+    margin-top: 1rem;
+    background-color: white;
+    margin-left: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    align-items: center;
+}
+.prop-listing .prop-list .prop-item{
+    height: 300px;
+    width: 100%;
+}
+.prop-listing .prop-list .prop-item .prop-img{
+    position: relative;
+}
+.prop-listing .prop-list .prop-item .prop-img img{
+    position: absolute;
+    width: 100%;
+    height: 250px;
+}
+.prop-listing .prop-list .prop-item .prop-base{
+    width: 100%;
+    padding: 1rem;
+    margin-top: 15rem;
+}
+.prop-listing .prop-list .prop-item .prop-base span{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.prop-listing .prop-list .prop-item .prop-base span .title{
+    color: black;
+    text-align: left;
+    font-size: 1.4rem;
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.prop-listing .prop-list .prop-item .prop-base span .state{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+}
+.prop-listing .prop-list .prop-item .prop-base .btn-01{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.prop-listing .prop-list .prop-item .prop-base .btn-01 button{
+    background-color: #4caf50;
+}
+.prop-listing .prop-list .prop-item .prop-base .btn-02{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.prop-listing .prop-list .prop-item .prop-base .btn-02 p{
+    color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.prop-listing .prop-list .prop-item .prop-base .btn-02 a{
+    background-color: red;
+    padding: .5rem 1rem;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}

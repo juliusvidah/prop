@@ -1,3 +1,8 @@
+body{
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-bottom: 5rem;
+}
 .user1 {
   position: relative;
 }
@@ -62,12 +67,12 @@
 }
 .username {
   position: absolute;
-  top: 40%;
+  top: 30%;
   left: 35%;
 }
 .username h2 {
-  font-family: Roboto;
-  font-size: 48px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 2rem;
   font-weight: 700;
   line-height: 50px;
   text-align: left;
@@ -75,7 +80,7 @@
   left: 40%;
 }
 .wallet {
-  font-family: Roboto;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 24px;
   font-weight: 300;
   line-height: 50px;
@@ -83,12 +88,12 @@
   color: #ffffff;
 }
 .amount {
-  font-family: Roboto;
-  font-size: 30px;
+  font-family: sans-serif;
+  font-size: 4rem;
   font-weight: 700;
   line-height: 50px;
   text-align: left;
-  color: #333333;
+  color: white;
   margin-left: 7px;
 }
 .userimage{
@@ -121,4 +126,44 @@ opacity: 0px;
     top: 50%;
     left: 10%;
     width: 20vw;
+}
+.my-props{
+  background-color: white;
+  width: 55%;
+  height: 200px;
+  margin-left: 30rem;
+  margin-top: 5rem;
+  padding: 10px;
+}
+.unauthorized-wrapper{
+  background-color: white;
+  width: 100%;
+  min-height: 500px;
+}
+.unauthorized-wrapper img{
+  display: block;
+  margin: 0px auto;
+}
+.unauthorized-wrapper a{
+  color: #e45122;
+  border: 1px solid #e45122;
+  text-decoration: none;
+  padding: 1rem 4rem;
+  display: inline-block;
+  margin: 0px auto;
+}
+.unauthorized-wrapper .btn-link{
+  margin: 10px auto;
+  padding: 10px;
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.accountnumber{
+  color: white;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin-left: 10px;
+  font-size: 2rem;
 }

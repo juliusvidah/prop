@@ -103,3 +103,65 @@
   .popup-button.withdraw:hover {
     background-color: #c82333;
   }
+  .modal-container{
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    min-height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .modal-box {
+    position: fixed;
+    top: 10%;
+    width: 40%;
+    min-height: 20rem;
+    background-color: white;
+    padding: 2rem 4rem;
+    border-radius: 8px;
+  }
+  .close-icon{
+    margin-top: 2rem;
+    padding-bottom: 4rem;
+  }
+  .input{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .input input{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: none;
+    outline: none;
+    border: 1px solid gray;
+    padding: 10px 8px;
+    width: 100%;
+  }
+  .input textarea{
+    width: 100%;
+    resize: none;
+    outline: none;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  .wallet-btn{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .close-icon{
+    margin-left: 25rem;
+    margin-bottom: 10rem;
+    color: gray;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    cursor: pointer;
+  }
+  .wallet-text{
+    margin: 15px 0px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: gray;
+  }

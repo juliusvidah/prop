@@ -1,164 +1,118 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
+import Nav from "../nav/Nav";
+import './propertydetails.css'
+import DemoImg from '../../../public/bongalow-house.jpg'
+import { Link, useParams } from 'react-router-dom';
+import { useEffect } from 'react';
+import axios from 'axios';
+const PropertyDetail = () => {
 
-const PropertyDetail = ({ property, onClose }) => {
-  if (!property) return null;
+  // get params 
+  const { id } = useParams()
+  // reg error
+  const [ error, setError ] = useState(null)
+  const [ data, setData ] = useState(null)
+  console.log(id)
 
-  const { description, status, type, price, imageUrl } = property;
+  // fetch data 
+  useEffect(()=>{
+    const fetchData = async ()=>{
+      try {
+        const response = await axios.get(`https://propwise.onrender.com/property/details/${id}`)
+        console.log(response.data);
+        
+        setData(response.data)
+      } catch (error) {
+        if(error.response){
+          console.log(error.response.data.message)
+        }
+      }
+    }
+    fetchData()
+  },[])
 
-  const handlePayment = () => {
-    // Logic for handling payment goes here
-    alert('Redirecting to payment...');
-  };
-
-  return (
-    <div style={styles.container}>
-      <button onClick={onClose} style={styles.closeButton}>Close</button>
-      <h2 style={styles.title}>Property Details</h2>
-     
-      <img src={imageUrl} alt="Property" style={styles.image} />
-     
-      <p style={styles.description}>{description}</p>
-     
-      <div style={styles.details}>
-        <p><strong>Status:</strong> {status}</p>
-        <p><strong>Type:</strong> {type}</p>
-        <p><strong>Price:</strong> {price}</p>
-      </div>
-     
-      <button style={styles.paymentButton} onClick={handlePayment}>
-        Make Payment
-      </button>
-    </div>
-  );
-};
-
-const PropertyList = () => {
-  const [selectedProperty, setSelectedProperty] = useState(null);
-
-  const properties = [
-    {
-      id: 1,
-      name: 'Luxury Villa',
-      description: 'A luxurious 4-bedroom villa with stunning ocean views, private pool, and modern amenities.',
-      status: 'Available',
-      type: 'Residential',
-      price: '$1,500,000',
-      imageUrl: 'https://via.placeholder.com/600x400',
-    },
-    {
-      id: 2,
-      name: 'Urban Apartment',
-      description: 'A modern apartment in the heart of the city, close to all amenities and public transport.',
-      status: 'Sold',
-      type: 'Residential',
-      price: '$800,000',
-      imageUrl: 'https://via.placeholder.com/600x400',
-    },
-    // Add more properties as needed
-  ];
-
-  const handlePropertyClick = (property) => {
-    setSelectedProperty(property);
-  };
-
-  const handleCloseDetail = () => {
-    setSelectedProperty(null);
-  };
 
   return (
     <div>
-      <h1>Property Listings</h1>
-      <ul style={styles.list}>
-        {properties.map((property) => (
-          <li key={property.id} style={styles.listItem}>
-            <span>{property.name}</span>
-            <button
-              onClick={() => handlePropertyClick(property)}
-              style={styles.viewButton}>
-              View Details
-            </button>
-          </li>
-        ))}
-      </ul>
-
-      {selectedProperty && (
-        <PropertyDetail property={selectedProperty} onClose={handleCloseDetail} />
-      )}
+      <Nav />
+      <div className='details-container'>
+        <div className='inner-wrapper'>
+          <div className='description-container'>
+            <div className='img-wrapper'>
+              <img src={ DemoImg } alt='description image' />
+            </div>
+            {
+             data && (<h1>{data.details.title}</h1>)
+            }
+            {
+              data && (<p>{ data.details.city } { data.details.state }, Nigeria</p>)
+            }
+            {
+              data && (
+              <div className='desc-content'>
+                <span className='desc-span-1'>
+                  <p className='desc-content-1'>YEAR BUILT</p>
+                  <p className='desc-contetn-2'>{ data.details.year_built }</p>
+                </span>
+                <span className='desc-span-1'>
+                  <p className='desc-content-1'>BEDROOM(S)</p>
+                  <p className='desc-contetn-2'>{ data.details.bedrooms }</p>
+                </span>
+                <span className='desc-span-2'>
+                  <p className='desc-content-1'>BATHROOM</p>
+                  <p className='desc-contetn-2'>{ data.details.bathrooms }, + Guest</p>
+                </span>
+                <span className='desc-span-2'>
+                  <p className='desc-content-1'>ACRE LOT</p>
+                  <p className='desc-contetn-2'>{ data.details.acre_lot.$numberDecimal } SQR</p>
+                </span>
+              </div>
+              )
+            }
+            <br /><br />
+            <hr />
+            {
+              data && (
+                <>
+                  <h4 className='desc-t'>DESCRIPTION</h4>
+                <p className='desc'>
+                  { data.details.description }
+                </p>
+                </>
+              )
+            }
+            {
+              data && (
+              <div className='desc-btn'>              
+                <Link to={`/full-payment/${data.details._id}`}>Make Full Payment</Link>
+                <Link to={`/installmental-payment/${data.details._id}`}>Installmental Payment</Link>
+              </div>
+              )
+            }
+          </div>
+          {
+            data && (
+            <div className='price-container'>
+              <p className='props-title'>Price</p>
+              <h1>${data.details.price.$numberDecimal}</h1>
+              <p className='props-title'>Features</p>
+              <p className='props-inner-price-cont'>
+                {data.details.features}
+              </p>
+              <p className='props-title'>Property type</p>
+              <p className='props-inner-price-cont'>{ data.details.prop_type }</p>
+              <p className='props-title'>Property status</p>
+              <p className='props-inner-price-cont'>{ data.details.prop_status }</p>
+              
+            </div>
+            )
+          }
+        </div>
+        <p className='related-post'>Related Post</p>
+        <hr />
+      </div>
     </div>
-  );
-};
+  )
+}
 
-const styles = {
-  container: {
-    backgroundColor: '#fff',
-    padding: '20px',
-    borderRadius: '10px',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-    maxWidth: '600px',
-    margin: 'auto',
-    position: 'relative',
-  },
-  closeButton: {
-    position: 'absolute',
-    top: '10px',
-    right: '10px',
-    backgroundColor: 'transparent',
-    border: 'none',
-    fontSize: '1.5rem',
-    cursor: 'pointer',
-  },
-  title: {
-    fontSize: '2rem',
-    marginBottom: '20px',
-    color: '#FF7F50', // Orange color for title
-  },
-  image: {
-    width: '100%',
-    height: 'auto',
-    borderRadius: '10px',
-    marginBottom: '20px',
-  },
-  description: {
-    fontSize: '1rem',
-    marginBottom: '20px',
-    lineHeight: '1.5',
-  },
-  details: {
-    marginBottom: '20px',
-    fontSize: '1rem',
-  },
-  paymentButton: {
-    padding: '10px 20px',
-    fontSize: '1rem',
-    color: '#fff',
-    backgroundColor: '#FF7F50',
-    border: 'none',
-    borderRadius: '5px',
-    cursor: 'pointer',
-  },
-  list: {
-    listStyleType: 'none',
-    padding: 0,
-  },
-  listItem: {
-    padding: '10px',
-    marginBottom: '10px',
-    backgroundColor: '#f1f1f1',
-    cursor: 'pointer',
-    borderRadius: '5px',
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  viewButton: {
-    padding: '5px 10px',
-    fontSize: '1rem',
-    color: '#fff',
-    backgroundColor: '#FF7F50',
-    border: 'none',
-    borderRadius: '5px',
-    cursor: 'pointer',
-  },
-};
-
-export default PropertyList;
+export default PropertyDetail

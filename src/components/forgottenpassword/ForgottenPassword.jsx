@@ -1,55 +1,65 @@
-import { Image, Transformation } from 'cloudinary-react';
-import React, { useState } from 'react';
-import { cloudName, logo } from '../cloud/CloudImages';
-import './forgottenpassword.css'
+import { Image, Transformation } from "cloudinary-react";
+import React, { useState } from "react";
+import { cloudName, logo } from "../cloud/CloudImages";
+import "./forgottenpassword.css";
+
+import axios from "axios";
 
 const ForgottenPassword = () => {
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
- 
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState(null);
+  const [success, setSuccess] = useState(null)
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
-      // Call your API to send reset password link
-      const response = await fetch('/https://propwise.onrender.com/user/forgot-password', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email }),
-      });
-
-      if (response.ok) {
-        setMessage('A reset password link has been sent to your email.');
-      } else {
-        setMessage('Failed to send reset password link. Please try again.');
-      }
+      const response = await axios.post(
+        "https://propwise.onrender.com/user/forgot-password",
+        { email }
+      );
+      setSuccess(response.data.message)
+      setMessage(null)
     } catch (error) {
-      setMessage('An error occurred. Please try again later.');
+      if (error.response) {
+        setMessage(error.response.data.message);
+        setSuccess(null)
+      }
     }
   };
 
   return (
     <div className="forgot-password-container">
-         <div className="logo">
+      <div className="logo">
         <Image className="logo" cloudName={cloudName} publicId={logo.logo1}>
           <Transformation crop="scale" width="200" angle="0" />
         </Image>
       </div>
       <h2>Forgot Password</h2>
+      {
+        message && (
+          <div className="error-message">
+            <p>{ message }</p>
+          </div>
+        )
+      }
+      {
+        success && (
+          <div className="success-message">
+            <p>{ success }</p>
+          </div>
+        )
+      }
       <form onSubmit={handleSubmit}>
         <label>Email Address:</label>
         <input
-          type="email"
-          placeholder='Enter Email'
+          type="text"
+          placeholder="Enter Email"
+          name="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          required
         />
         <button type="submit">Send Reset Link</button>
       </form>
-      {message && <p>{message}</p>}
     </div>
   );
 };

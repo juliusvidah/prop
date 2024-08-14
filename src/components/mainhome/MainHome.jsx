@@ -5,23 +5,30 @@ import { arrow, cloudName, footer, onboard2 } from "../cloud/CloudImages";
 import { Image, Transformation } from "cloudinary-react";
 import CarouselComponent from "../carousel/CarouselComponent";
 import Payment from "../payment/Payment";
+import { Link } from "react-router-dom";
 
 const MainHome = () => {
   return (
     <div>
       <Nav />
       <div className="onboard">
-        <div className="text">
-          <h1>Discover your dream property </h1>
-          <h1> in the heart of the city</h1>
-        </div>
-        <div className="para">
-          <p>Team Kraken is a reliable real estate team </p>
-          <p> put together by CareerEx initiative.</p>
-        </div>
-        <div className="btn55">
-          <button className="start55">Invest Now</button>
-          {/* <Notification/> */}
+        <div className="overlay">
+          <div className="inner-content">
+            <div className="text">
+              <h1>Discover your dream property </h1>
+              <h1> in the heart of the city</h1>
+            </div>
+            <div className="para">
+              <p>Team Kraken is a reliable real estate team </p>
+              <p> put together by CareerEx initiative.</p>
+            </div>
+            <div className="btn55">
+              <button className="start55">
+                <Link to='/propertyList'>Invest now</Link>
+              </button>
+              {/* <Notification/> */}
+            </div>
+          </div>
         </div>
       </div>
       <div className="onboard2"></div>
@@ -49,7 +56,7 @@ const MainHome = () => {
             <Transformation crop="scale" width="200" angle="0" />
           </Image>{" "}
         </div>
-        <Payment/>
+        {/* <Payment /> */}
       </div>
       <div className="footer">
         <Image

@@ -1,4 +1,4 @@
-.signin-container {
+/* .signin-container {
   display: flex;
   min-height: 100vh;
   background-color: whitesmoke;
@@ -94,4 +94,96 @@ input[type="password"] {
 
 .signup-prompt a:hover {
   text-decoration: underline;
+}
+.error{
+  background-color: white;
+  width: 100%;
+  min-height: 10px;
+  margin: 10px 0px;
+  border: 1px solid red;
+  padding: 1rem;
+  border-radius: 6px;
+}
+.error p{
+  color:red !important;
+  font-weight: lighter;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.login-container{
+  background-color: whitesmoke;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  inset: 0;
+}
+.login-wrapper{
+  max-width: 600px;
+  min-height: 400px;
+  background-color: white;
+  margin: 8rem auto;
+  padding: 2rem 1rem;
+} */
+
+.error{
+  background-color: white;
+  width: 100%;
+  min-height: 10px;
+  margin: 10px 0px;
+  border: 1px solid red;
+  padding: 1rem;
+  border-radius: 6px;
+}
+.error p{
+  color:red !important;
+  font-weight: lighter;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.login-container{
+  background-color: whitesmoke;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  inset: 0;
+}
+.login-wrapper{
+  max-width: 600px;
+  min-height: 400px;
+  background-color: white;
+  margin: 1rem auto;
+  padding: 2rem 1rem;
+}
+.login-wrapper img{
+  display: block;
+  margin: 1rem auto;
+}
+.login-wrapper h4{
+  text-align: center;
+  margin: 1rem 0px;
+  font-weight: lighter;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 2rem;
+}
+.login-wrapper p{
+  font-size: 1rem;
+  font-weight: lighter;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.login-wrapper .form-group{
+  max-width: 400px;
+  width: 100%;
+  margin: 0px auto;
+}
+.login-wrapper .form-group .input-style{
+  border: 1px solid gainsboro;
+  outline: none;
+  margin: 0;
+}
+.forgot-password{
+  text-align: right;
+  margin: 2rem 5rem; 
+}
+.login-wrapper form button{
+  width: 50%;
+  display: inline;
+  margin: 0px auto;
 }

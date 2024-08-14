@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import './topup.css'
 
+import axios from 'axios';
+import Cookies from 'js-cookie'
 const TopUp = () => {
   // State to manage wallet balance, transaction amount, and popup visibility
   const [walletBalance, setWalletBalance] = useState(0); // Default balance
-  const [transactionAmount, setTransactionAmount] = useState('');
+  const [transactionAmount, setTransactionAmount] = useState(''); 
+  const [transactionDescription, setTransactionDescription] = useState(''); 
   const [isPopupOpen, setIsPopupOpen] = useState(false); // Popup visibility
+
+  const [amount, setAmount] = useState('')
+  const [description, setDescription] = useState('')
 
   // Fetch the initial wallet balance from an API (mocking with useEffect)
   useEffect(() => {
@@ -19,29 +25,52 @@ const TopUp = () => {
     fetchWalletBalance();
   }, []);
 
+
+  const token = Cookies.get('authToken')
+
   // Function to handle adding funds
-  const handleAddFunds = () => {
-    const amountToAdd = parseFloat(transactionAmount);
-    if (!isNaN(amountToAdd) && amountToAdd > 0) {
-      setWalletBalance(prevBalance => prevBalance + amountToAdd);
-      setTransactionAmount('');
-    } else {
-      alert("Please enter a valid amount to add.");
+  const handleAddFunds = async(e) => {
+    e.preventDefault()
+    try {
+      const response = await axios.patch('https://propwise.onrender.com/wallet/fund',
+        {
+          amount,
+          description
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
+      console.log(response.data.message)  
+    } catch (error) {
+      if(error.response){
+        console.log(error.response.data.message)
+      }
     }
   };
 
   // Function to handle withdrawing funds
-  const handleWithdrawFunds = () => {
-    const amountToWithdraw = parseFloat(transactionAmount);
-    if (!isNaN(amountToWithdraw) && amountToWithdraw > 0) {
-      if (amountToWithdraw <= walletBalance) {
-        setWalletBalance(prevBalance => prevBalance - amountToWithdraw);
-        setTransactionAmount('');
-      } else {
-        alert("Insufficient balance.");
+  const handleWithdrawFunds = async(e) => {
+    e.preventDefault()
+    try {
+      const response = await axios.patch('https://propwise.onrender.com/wallet/withdraw',
+        {
+          amount,
+          description
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
+      console.log(response.data.message)  
+    } catch (error) {
+      if(error.response){
+        console.log(error.response.data.message)
       }
-    } else {
-      alert("Please enter a valid amount to withdraw.");
     }
   };
 
@@ -60,31 +89,49 @@ const TopUp = () => {
      
       {/* Wallet Balance Display */}
       <div className='wallet-balance'>
-        <h3>Wallet Balance: ${walletBalance.toFixed(2)}</h3>
+      
       </div>
 
       {/* Button to open the popup */}
       <button className='top-manage' onClick={openPopup}>Manage Funds</button>
 
       {/* Popup Modal */}
-      {isPopupOpen && (
-        <div >
-          <div >
-            <span  onClick={closePopup}>X</span>
-            <h3>Manage Your Wallet</h3>
-           <div className="input">
-           <input
-              type="number"
-              placeholder="Enter amount"
-              value={transactionAmount}
-              onChange={e => setTransactionAmount(e.target.value)}
-            />
-           </div>
-            <button onClick={handleAddFunds}>Add Funds</button>
-            <button onClick={handleWithdrawFunds}>Withdraw Funds</button>
+      {
+        isPopupOpen &&
+      <div className='modal-container'>
+        {isPopupOpen && (
+          <div className='modal-box'>
+            <div>
+              <span className='close-icon' onClick={closePopup}>X</span>
+              <h3 className='wallet-text'>Wallet Fund/Withdrawal</h3>
+              <form>
+                <div className="input">
+                <input
+                    type="number"
+                    placeholder="Enter amount"
+                    name='amount'
+                    value={amount}
+                    onChange={e => setAmount(e.target.value)}
+                  />
+                {/* <input
+                    type="text"
+                    placeholder="Enter description"
+                    name='description'
+                    value={transactionDescription}
+                    onChange={e => setTransactionDescription(e.target.value)}
+                  /> */}
+                  <textarea className='description' value={description} name='description' onChange={e=>setDescription(e.target.value)} rows={10} cols={30}></textarea>
+                </div>
+                <div className='wallet-btn'>
+                  <button type='submit' onClick={handleAddFunds}>Add Funds</button>
+                  <button type='submit' onClick={handleWithdrawFunds}>Withdraw Funds</button>
+                </div>
+              </form>
+            </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
+      }
     </div>
   );
 };

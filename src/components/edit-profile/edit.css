@@ -1,0 +1,47 @@
+.edit-container{
+    position: absolute;
+    width: 100%;
+    height: 800px;
+    background-color: rgba(0, 0, 0, 0.6);
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.inner-container{
+    width: 100%;
+    max-width: 600px;
+    min-height: 200px;
+    background-color: white;
+    padding: 1rem;
+    margin-top: -15rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.inner-container div{
+    width: 70%;
+}
+.inner-container input, .inner-container .email, .inner-container .password{
+    width: 100%;
+    padding: 0;
+    font-size: 1rem;
+    margin: .5rem 0px;
+    padding: .7rem;
+    outline: none;
+    border: 1px solid #E45122;
+    border-radius: 5px;
+}
+.inner-container div .btn-x{
+    
+    background-color: white;
+    border: 1px solid #E45122;
+    color: #E45122;
+    margin-left: 25rem;
+    padding: .3rem;
+    text-decoration: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
