@@ -28,7 +28,7 @@ const Home = () => {
               <Link to={"#about"} className="read-more">
                 Read more &rarr;
               </Link>
-              <Link to={"/login"} className="get-started">
+              <Link to={"/user"} className="get-started">
                 Get started
               </Link>
             </div>
