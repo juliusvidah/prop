@@ -72,10 +72,12 @@ const CreateProps = () => {
         }
       );
       setSuccess(response.data.message)
+      console.log(success);
       setError(null)
     } catch (error) {
         if(error.response){
             setError(error.response.data.message)
+            console.log(error);
         }
     }
   };
